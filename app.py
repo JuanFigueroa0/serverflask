@@ -7,7 +7,7 @@ import os
 from flask_cors import CORS
 
 # Cargar variables de entorno desde el archivo .env
-load_dotenv()
+# load_dotenv()
 
 # Configurar Flask
 app = Flask(__name__)
@@ -82,4 +82,5 @@ def get_reports():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    port = int(os.environ.get("PORT", 5000))  # Railway asignará el puerto en la variable de entorno PORT
+    app.run(debug=True, host='0.0.0.0', port=port)
