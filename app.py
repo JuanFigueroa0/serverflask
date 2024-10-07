@@ -7,7 +7,7 @@ import os
 from flask_cors import CORS
 
 # Cargar variables de entorno desde el archivo .env
-load_dotenv(dotenv_path="bd.env")
+load_dotenv()
 
 # Configurar Flask
 app = Flask(__name__)
